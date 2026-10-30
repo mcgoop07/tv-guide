@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Build a small TiviMate guide (custom.xml.gz) for US local stations and adult channels.
+"""Build a small TiviMate guide (custom.xml.gz) for channels the provider's own guide misses
+(US locals and cable, Canada, Australia, UK regional/extra, adult).
 Downloads the epgshare01 guides, keeps only the channels in targets.json and renames them
 to the provider's channel names, so TiviMate matches them automatically.
 Run: python3 build.py [cache_dir]
@@ -12,13 +13,24 @@ CACHE = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, 'cache')
 OUT = os.path.join(HERE, 'public', 'custom.xml.gz')
 URL = 'https://epgshare01.online/epgshare01/epg_ripper_{}.xml.gz'
 SUFFIX = {'us_locals1': 'US_LOCALS1', 'us2': 'US2', 'uk': 'UK1', 'cz': 'CZ1', 'gr': 'GR1', 'es': 'ES1',
-          'be': 'BE2', 'de': 'DE1', 'at': 'AT1', 'hr': 'HR1', 'dk': 'DK1', 'al': 'AL1', 'br': 'BR1'}
+          'be': 'BE2', 'de': 'DE1', 'at': 'AT1', 'hr': 'HR1', 'dk': 'DK1', 'al': 'AL1', 'br': 'BR1',
+          'us': 'FANDUEL1', 'ca2': 'CA2', 'au': 'AU1', 'ie': 'IE1', 'in': 'IN1'}
+
+
+# A source is "channel.id" (file picked from its suffix) or "FILE|channel.id" when the suffix is shared.
+def src_file(s):
+    return s.split('|', 1)[0] if '|' in s else SUFFIX[s.rsplit('.', 1)[1]]
+
+
+def src_id(s):
+    return s.split('|', 1)[-1]
+
 
 targets = json.load(open(os.path.join(HERE, 'targets.json'), encoding='utf-8'))
 wanted = {}  # source id -> list of target indexes
 for n, t in enumerate(targets):
     for s in t['sources']:
-        wanted.setdefault(s, []).append(n)
+        wanted.setdefault(src_id(s), []).append(n)
 
 
 def fetch(name):
@@ -32,7 +44,7 @@ def fetch(name):
 
 # Read every needed programme, grouped by source channel id.
 progs = {}
-for name in sorted({SUFFIX[s.rsplit('.', 1)[1]] for s in wanted}):
+for name in sorted({src_file(s) for t in targets for s in t['sources']}):
     try:
         path = fetch(name)
     except Exception as e:
@@ -52,7 +64,7 @@ for name in sorted({SUFFIX[s.rsplit('.', 1)[1]] for s in wanted}):
 root = ET.Element('tv', {'generator-info-name': 'home custom guide'})
 chans, body = [], []
 for t in targets:
-    src = max(t['sources'], key=lambda s: len(progs.get(s, [])))
+    src = max((src_id(s) for s in t['sources']), key=lambda s: len(progs.get(s, [])))
     if len(progs.get(src, [])) < 3:
         print('no real listings for', t['name'])
         continue
