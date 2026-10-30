@@ -1863,9 +1863,9 @@
  },
  {
   "id": "USANetwork.us",
-  "name": "US: USA Network West",
+  "name": "US: USA Network HD",
   "sources": [
-   "USA.Network.HD.(Pacific).us2"
+   "USA.Network.HD.us2"
   ]
  },
  {
