@@ -21,6 +21,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      # Offline translator (CPU-only torch keeps the install small). Models are cached between runs.
+      - run: pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu && pip install --quiet argostranslate
+      - uses: actions/cache@v4
+        with:
+          path: ~/.local/share/argos-translate
+          key: argos-models-v1
+      # English translations from earlier runs (tcache/translations.json in the repo is the starting copy),
+      # so only new programmes are translated each day.
+      - uses: actions/cache@v4
+        with:
+          path: tcache
+          key: translations-${{ github.run_id }}
+          restore-keys: translations-
       - run: mkdir -p public && python3 build.py "$RUNNER_TEMP/cache"
       - uses: actions/upload-pages-artifact@v3
         with:

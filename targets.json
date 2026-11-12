@@ -3595,461 +3595,583 @@
   "name": "ALB: Fox Life",
   "sources": [
    "AL1|Star.Life.al"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: Star Life",
   "name": "EXYU: Star Life",
   "sources": [
    "HR1|STAR.Life.hr"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: AXN Adria",
   "name": "EXYU: AXN Adria",
   "sources": [
    "HR1|AXN.hr"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: Fox Life FHD",
   "name": "PT: Fox Life FHD",
   "sources": [
    "PT1|Star.Life.HD.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "NL: Star Channel HD",
   "name": "NL: Star Channel HD",
   "sources": [
    "NL1|STAR.Channel.nl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "NL: Fox FHD",
   "name": "NL: Fox FHD",
   "sources": [
    "NL1|STAR.Channel.nl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: SyFy",
   "name": "PT: SyFy",
   "sources": [
    "PT1|Syfy.HD.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: Star Crime",
   "name": "EXYU: Star Crime",
   "sources": [
    "HR1|STAR.Crime.hr"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: Fox Crime FHD",
   "name": "PT: Fox Crime FHD",
   "sources": [
    "PT1|Star.Crime.HD.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: Axn White FHD",
   "name": "PT: Axn White FHD",
   "sources": [
    "PT1|AXN.White.HD.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PL | Sundance TVⓧ FHD",
   "name": "PL | Sundance TVⓧ FHD",
   "sources": [
    "PL1|Sundance.TV.HD.pl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: Star Comedy HD",
   "name": "PT: Star Comedy HD",
   "sources": [
    "PT1|Star.Comedy.HD.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "RO: Comedy Central",
   "name": "RO: Comedy Central",
   "sources": [
    "RO1|Comedy.Central.ro"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "NL: Comedy Central FHD",
   "name": "NL: Comedy Central FHD",
   "sources": [
    "NL1|Comedy.Central.nl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "BE | Comedy Central NLⓧ HD",
   "name": "BE | Comedy Central NLⓧ HD",
   "sources": [
    "NL1|Comedy.Central.nl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "|PL| Comedy Central FHD",
   "name": "|PL| Comedy Central FHD",
   "sources": [
    "PL1|Comedy.Central.HD.pl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "RO: HBO 3 HD (1080P)",
   "name": "RO: HBO 3 HD (1080P)",
   "sources": [
    "RO1|HBO.3.HD.ro"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: HBO 3 HD",
   "name": "EXYU: HBO 3 HD",
   "sources": [
    "HR1|HBO.3.HD.hr"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "RO: Epic Drama FHD",
   "name": "RO: Epic Drama FHD",
   "sources": [
    "RO1|Epic.Drama.ro"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "RO: HBO 2 HD (1080P)",
   "name": "RO: HBO 2 HD (1080P)",
   "sources": [
    "RO1|HBO.2.HD.ro"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: HBO 2 HD",
   "name": "EXYU: HBO 2 HD",
   "sources": [
    "HR1|HBO.2.HD.hr"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: AMC",
   "name": "EXYU: AMC",
   "sources": [
    "HR1|AMC.HD.hr"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "RO: FilmBox Stars",
   "name": "RO: FilmBox Stars",
   "sources": [
    "RO1|Filmbox.Stars.ro"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "RO: FilmBox Premium",
   "name": "RO: FilmBox Premium",
   "sources": [
    "RO1|Filmbox.Premium.ro"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "BG: FilmBox Extra HD",
   "name": "BG: FilmBox Extra HD",
   "sources": [
    "BG1|FilmBox.Extra.HD.bg"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: HBO Adria",
   "name": "EXYU: HBO Adria",
   "sources": [
    "HR1|HBO.HD.hr"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: AMC FHD",
   "name": "PT: AMC FHD",
   "sources": [
    "PT1|AMC.HD.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: Star Movies",
   "name": "EXYU: Star Movies",
   "sources": [
    "HR1|STAR.Movies.hr"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "NL: Discovery Science HD",
   "name": "NL: Discovery Science HD",
   "sources": [
    "NL1|Discovery.Science.nl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: History 2",
   "name": "EXYU: History 2",
   "sources": [
    "RS1|History.2.rs"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: Discovery Channel",
   "name": "PT: Discovery Channel",
   "sources": [
    "PT1|Discovery.HD.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: National Geographic",
   "name": "PT: National Geographic",
   "sources": [
    "PT1|National.Geographic.HD.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: History Channel",
   "name": "EXYU: History Channel",
   "sources": [
    "HR1|History.HD.hr"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: Nat Geo Wild",
   "name": "PT: Nat Geo Wild",
   "sources": [
    "PT1|National.Geographic.WILD.HD.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: National Geographics",
   "name": "EXYU: National Geographics",
   "sources": [
    "HR1|National.Geographic.hr"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: Nat Geo Wild",
   "name": "EXYU: Nat Geo Wild",
   "sources": [
    "HR1|National.Geographic.Wild.hr"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "NL: National Geographic HD",
   "name": "NL: National Geographic HD",
   "sources": [
    "NL1|National.Geographic.nl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "BE | National Geographic NLⓧ FHD",
   "name": "BE | National Geographic NLⓧ FHD",
   "sources": [
    "NL1|National.Geographic.nl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "NL: History Channel HD",
   "name": "NL: History Channel HD",
   "sources": [
    "NL1|HISTORY.nl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "NL: Discovery FHD",
   "name": "NL: Discovery FHD",
   "sources": [
    "NL1|Discovery.nl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "RO: Animal Planet FHD",
   "name": "RO: Animal Planet FHD",
   "sources": [
    "RO1|Animal.Planet.ro"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: Animal Planet",
   "name": "EXYU: Animal Planet",
   "sources": [
    "RS1|Animal.Planet.HD.(RS).rs"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: Investigation Discovery",
   "name": "PT: Investigation Discovery",
   "sources": [
    "PT1|ID.Investigation.Discovery.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "|PL| ID FHD",
   "name": "|PL| ID FHD",
   "sources": [
    "PL1|ID.pl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PL | Investigation Discoveryⓧ",
   "name": "PL | Investigation Discoveryⓧ",
   "sources": [
    "PL1|ID.pl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: Discovery ID",
   "name": "EXYU: Discovery ID",
   "sources": [
    "RS1|ID.rs"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "|PL| BBC Earth FHD",
   "name": "|PL| BBC Earth FHD",
   "sources": [
    "PL1|BBC.Earth.HD.pl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "RO: Discovery FHD",
   "name": "RO: Discovery FHD",
   "sources": [
    "RO1|Discovery.Channel.ro"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "RO: Nat Geo FHD",
   "name": "RO: Nat Geo FHD",
   "sources": [
    "RO1|National.Geographic.HD.ro"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "RO: Nat Geo Wild HD",
   "name": "RO: Nat Geo Wild HD",
   "sources": [
    "RO1|National.Geographic.Wild.ro"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "|PL| Nat Geo Wild FHD",
   "name": "|PL| Nat Geo Wild FHD",
   "sources": [
    "PL1|National.Geographic.Wild.pl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "BG: Travel Channel FHD",
   "name": "BG: Travel Channel FHD",
   "sources": [
    "BG1|Travel.Channel.bg"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "BG: Travel Channel TV",
   "name": "BG: Travel Channel TV",
   "sources": [
    "BG1|Travel.Channel.bg"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "RO: Viasat History HD",
   "name": "RO: Viasat History HD",
   "sources": [
    "RO1|Viasat.History.HD.ro"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: AMC Break FHD",
   "name": "PT: AMC Break FHD",
   "sources": [
    "PT1|AMC.Break.HD.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: MTV Portugal FHD",
   "name": "PT: MTV Portugal FHD",
   "sources": [
    "PT1|MTV.Portugal.HD.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "NL: MTV FHD",
   "name": "NL: MTV FHD",
   "sources": [
    "NL1|MTV.nl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "NL: TLC FHD",
   "name": "NL: TLC FHD",
   "sources": [
    "NL1|TLC.nl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: TLC",
   "name": "PT: TLC",
   "sources": [
    "PT1|TLC.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "NL: E! Entertainment HD",
   "name": "NL: E! Entertainment HD",
   "sources": [
    "NL1|E!.nl"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "RO: E! Entertainment HD",
   "name": "RO: E! Entertainment HD",
   "sources": [
    "RO1|E!.Entertainment.HD.ro"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "PT: E! Entertainment FHD",
   "name": "PT: E! Entertainment FHD",
   "sources": [
    "PT1|E!.Entertainment.HD.pt"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: E!",
   "name": "EXYU: E!",
   "sources": [
    "RS1|E!.Entertainment.(RS).rs"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "EXYU: TLC HD",
   "name": "EXYU: TLC HD",
   "sources": [
    "HR1|TLC.hr"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "BG: Cartoon Network",
   "name": "BG: Cartoon Network",
   "sources": [
    "BG1|Cartoon.Network.bg"
-  ]
+  ],
+  "translate": true
  },
  {
   "id": "RO: Nickelodeon",
   "name": "RO: Nickelodeon",
   "sources": [
    "RO1|Nickelodeon.HD.ro"
-  ]
+  ],
+  "translate": true
+ },
+ {
+  "id": "ES: MTV Espana FHD",
+  "name": "ES: MTV Espana FHD",
+  "sources": [
+   "ES1|MTV.España.es"
+  ],
+  "translate": true
+ },
+ {
+  "id": "BG: AMC",
+  "name": "BG: AMC",
+  "sources": [
+   "BG1|AMC.bg"
+  ],
+  "translate": true
+ },
+ {
+  "id": "PT: Axn Movies FHD",
+  "name": "PT: Axn Movies FHD",
+  "sources": [
+   "PT1|AXN.Movies.HD.pt"
+  ],
+  "translate": true
+ },
+ {
+  "id": "RO: AMC FHD",
+  "name": "RO: AMC FHD",
+  "sources": [
+   "RO1|AMC.ro"
+  ],
+  "translate": true
+ },
+ {
+  "id": "ALB: Filma24 History",
+  "name": "ALB: Filma24 History",
+  "sources": [
+   "AL1|Tring.History.al"
+  ],
+  "translate": true
+ },
+ {
+  "id": "PT: Food Network FHD",
+  "name": "PT: Food Network FHD",
+  "sources": [
+   "PT1|Food.Network.HD.pt"
+  ],
+  "translate": true
+ },
+ {
+  "id": "NL: Boomerang FHD",
+  "name": "NL: Boomerang FHD",
+  "sources": [
+   "BE2|BOOMERANG.be"
+  ],
+  "translate": true
  }
 ]
