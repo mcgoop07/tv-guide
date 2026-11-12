@@ -5,7 +5,7 @@ Downloads the epgshare01 guides, keeps only the channels in targets.json and ren
 to the provider's channel names, so TiviMate matches them automatically.
 Run: python3 build.py [cache_dir]
 """
-import copy, gzip, json, os, subprocess, sys, time, urllib.parse
+import copy, gzip, json, os, subprocess, sys, time
 import xml.etree.ElementTree as ET
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -27,26 +27,31 @@ def src_id(s):
 
 
 # --- English translation for foreign channels that broadcast in English (targets with "translate": true) ---
-# Most languages use Argos Translate (offline, no limits). Argos has no Croatian/Serbian/Bosnian, so those
-# go to Google Translate's free endpoint, which is used lightly and dropped for the day if it refuses.
+# All offline, no accounts or limits: Argos Translate for most languages, and the Helsinki-NLP
+# South Slavic model (opus-mt-zls-en) for Croatian, Serbian (incl. Cyrillic) and Bosnian, which Argos lacks.
 # Results are cached between runs (tcache/translations.json), so each day only new programmes are translated;
 # anything left untranslated keeps its original text and is tried again the next day.
 LANG = {'NL1': 'nl', 'BE2': 'fr', 'PT1': 'pt', 'RO1': 'ro', 'RO2': 'ro', 'HR1': 'hr', 'RS1': 'sr',
         'BA1': 'bs', 'AL1': 'sq', 'PL1': 'pl', 'BG1': 'bg', 'ES1': 'es'}
 ARGOS = {'nl', 'fr', 'pt', 'ro', 'sq', 'pl', 'bg', 'es'}
 TCACHE = os.environ.get('TRANSLATION_CACHE', os.path.join(HERE, 'tcache', 'translations.json'))
-GTX = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl={}&tl=en&dt=t'
 TIME_LIMIT = 40 * 60  # stop translating after this long; the rest waits for the next run
 
 
-def gtx(lang, texts):
-    """Translate a batch of one-line texts with Google; returns a list of the same length, or None."""
-    data = urllib.parse.urlencode({'q': '\n'.join(texts)}).encode()
-    r = subprocess.run(['curl', '-sSf', '-m', '30', '-A', 'Mozilla/5.0', '--data-binary', '@-', GTX.format(lang)],
-                       input=data, capture_output=True, check=True)
-    d = json.loads(r.stdout)  # a refusal comes back as an HTML page, which fails here
-    out = ''.join(seg[0] for seg in d[0] if seg and seg[0]).split('\n')
-    return [s.strip() for s in out] if len(out) == len(texts) else None
+def south_slavic():
+    """Return a function translating a list of hr/sr/bs texts to English (None if unavailable)."""
+    try:
+        from transformers import MarianMTModel, MarianTokenizer
+        name = 'Helsinki-NLP/opus-mt-zls-en'
+        tok, model = MarianTokenizer.from_pretrained(name), MarianMTModel.from_pretrained(name)
+    except Exception as e:
+        print('south slavic model unavailable', e)
+        return None
+
+    def run(texts):
+        enc = tok(texts, return_tensors='pt', padding=True, truncation=True, max_length=512)
+        return tok.batch_decode(model.generate(**enc, max_new_tokens=400), skip_special_tokens=True)
+    return run
 
 
 def argos(lang):
@@ -90,26 +95,6 @@ def translate_guide(items):
     def out_of_time():
         return time.time() - start > TIME_LIMIT
 
-    google_ok = True
-
-    def google(lang, batch):
-        nonlocal google_ok
-        if not google_ok or out_of_time():
-            return
-        try:
-            out = gtx(lang, batch)
-        except Exception as e:
-            print('google translate refused, trying again next run:', str(e)[:80])
-            google_ok = False
-            return
-        time.sleep(1)
-        if out is None and len(batch) > 1:  # line count got muddled: split and retry
-            google(lang, batch[:len(batch) // 2])
-            google(lang, batch[len(batch) // 2:])
-        elif out:
-            for a, b in zip(batch, out):
-                used[lang + '|' + a] = b
-
     for lang, texts in todo.items():
         if lang in ARGOS:
             tr = argos(lang)
@@ -121,15 +106,16 @@ def translate_guide(items):
                 except Exception as e:
                     print('argos failed on a line:', e)
             continue
-        batch, size = [], 0
-        for text in sorted(texts):
-            if batch and size + len(text) > 3500:
-                google(lang, batch)
-                batch, size = [], 0
-            batch.append(text)
-            size += len(text) + 1
-        if batch:
-            google(lang, batch)
+        tr = south_slavic()
+        texts = sorted(texts)
+        for i in range(0, len(texts), 16):
+            if tr is None or out_of_time():
+                break
+            try:
+                for a, b in zip(texts[i:i + 16], tr(texts[i:i + 16])):
+                    used[lang + '|' + a] = b
+            except Exception as e:
+                print('south slavic model failed on a batch:', e)
     for lang, p in items:
         for el in p:
             if el.tag in ('title', 'sub-title', 'desc') and el.text and el.text.strip():
